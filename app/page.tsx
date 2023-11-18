@@ -402,7 +402,7 @@ const Page = () => {
                         )}
                     </div>
                     <div
-                        className={`form-control absolute z-10 mx-auto flex w-full max-w-[766px] select-none flex-row justify-between self-center p-[13px] transition-all sm:bg-transparent ${
+                        className={`form-control absolute z-10 mx-auto flex w-full max-w-[667px] select-none flex-row justify-between self-center p-[13px] transition-all sm:bg-transparent ${
                             sessionStarted
                                 ? 'bottom-[0px] h-[10vh] bg-black sm:bg-transparent'
                                 : 'bottom-0 h-[53.3vh]'
@@ -422,7 +422,7 @@ const Page = () => {
                                 placeholder="είσοδος"
                                 spellCheck={false}
                                 type="text"
-                                className="input h-full w-full rounded-full bg-base-200 font-mono text-[#EDEDED] placeholder-gray-100 focus:border-transparent focus:shadow-transparent focus:outline-none"
+                                className="input h-full w-full rounded-none bg-base-200 font-mono text-[#EDEDED] placeholder-gray-100 focus:border-transparent focus:shadow-transparent focus:outline-none"
                                 value={chatInput}
                                 onChange={handleChatInputChange}
                                 onKeyDown={handleChatInputKeyDown}
