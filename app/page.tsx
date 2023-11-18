@@ -6,7 +6,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import {
     createAssistantMessage,
     createUserMessage,
-    exportChat,
     extractYouTubeVideoId,
     toastErr,
     toastSuccess
@@ -20,9 +19,7 @@ import Loading from '@/components/Loading'
 import ResponseContainerChat from '@/components/ResponseContainerChat'
 import ResponseContainerAction from '@/components/ResponseContainerAction'
 import ResponseContainerOther from '@/components/ResponseContainerOther'
-import BtnOptions from '@/components/BtnOptions'
 import Spinner from '@/components/Spinner'
-import Image from 'next/image'
 import Rain from '@/components/Rain'
 import { PHProvider } from '@/consts/providers/PHProvider'
 
@@ -338,7 +335,9 @@ const Page = () => {
                         <div className="relative w-[333px]">
                             <img
                                 src="/imgs/kronos-logo.svg"
-                                className="w-full opacity-75 animate-pulse"
+                                className={`w-full opacity-30 ${
+                                    sessionStarted && 'opacity-70 animate-pulse'
+                                }`}
                                 alt="Background"
                             />
                             <div className="absolute inset-0 bg-black opacity-50"></div>
