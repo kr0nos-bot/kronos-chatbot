@@ -24,7 +24,7 @@ import BtnOptions from '@/components/BtnOptions'
 import Spinner from '@/components/Spinner'
 import Image from 'next/image'
 import Rain from '@/components/Rain'
-import {PHProvider} from "@/consts/providers/PHProvider";
+import { PHProvider } from '@/consts/providers/PHProvider'
 
 // initial message to calibrate the model
 const KRONOS_PROMPT_MESSAGE: Message = {
