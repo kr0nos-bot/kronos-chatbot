@@ -24,6 +24,7 @@ import BtnOptions from '@/components/BtnOptions'
 import Spinner from '@/components/Spinner'
 import Image from 'next/image'
 import Rain from '@/components/Rain'
+import {PHProvider} from "@/consts/providers/PHProvider";
 
 // initial message to calibrate the model
 const KRONOS_PROMPT_MESSAGE: Message = {
@@ -314,7 +315,7 @@ const Page = () => {
     }, [responsePending])
 
     return (
-        <>
+        <PHProvider>
             {/* Import modal */}
             <dialog
                 id="import_modal"
@@ -523,7 +524,7 @@ const Page = () => {
                     mute={mute}
                 /> */}
             </div>
-        </>
+        </PHProvider>
     )
 }
 
