@@ -395,7 +395,7 @@ const Page = () => {
                             <Rain />
                         </div>
                     )}
-                    <div className="z-[1] pointer-events-none fixed inset-0 flex select-none items-center justify-center">
+                    <div className="pointer-events-none fixed inset-0 z-[1] flex select-none items-center justify-center">
                         <div className="relative w-[333px]">
                             <img
                                 src="/imgs/kronos-logo.svg"
@@ -416,7 +416,7 @@ const Page = () => {
                         //           }
                         //         : {}
                         // }
-                        className={`z-[2] chat-history align-items-center relative mx-auto inline-block h-[100vh] w-full overflow-y-scroll transition-all duration-500 `}
+                        className={`chat-history align-items-center relative z-[2] mx-auto inline-block h-[100vh] w-full overflow-y-scroll transition-all duration-500 `}
                         ref={chatResponseRef}
                     >
                         {chatHistory?.length > 0 &&
@@ -487,6 +487,7 @@ const Page = () => {
                                 value={chatInput}
                                 onChange={handleChatInputChange}
                                 onKeyDown={handleChatInputKeyDown}
+                                onBlur={() => handleChatInputSubmit(chatInput)}
                                 ref={inputRef}
                             />
                             <div
