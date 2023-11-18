@@ -46,6 +46,32 @@ const ACTIONS = [
     //             .trim()
     //     }
     // },
+
+    // TODO
+    {
+        identifier: '/i',
+        type: ChatType.ACTION,
+        url: `${config.baseUrl}/api/stable-diffusion/v1/text2img`,
+        // url: `${config.baseUrl}/api/stable-diffusion/v2/text2img`,
+        mapToRequestData: (messages: Message[]) => {
+            // get content of last message from user
+            return messages[messages.length - 1].content
+                .replace(/\/\w+/g, '')
+                .trim()
+        }
+    },
+    {
+        identifier: '/image',
+        type: ChatType.ACTION,
+        url: `${config.baseUrl}/api/stable-diffusion/v1/text2img`,
+        // url: `${config.baseUrl}/api/stable-diffusion/v2/text2img`,
+        mapToRequestData: (messages: Message[]) => {
+            // get content of last message from user
+            return messages[messages.length - 1].content
+                .replace(/\/\w+/g, '')
+                .trim()
+        }
+    },
     {
         identifier: '/upscale',
         type: ChatType.ACTION,
@@ -60,19 +86,7 @@ const ACTIONS = [
         }
     },
     {
-        identifier: '/draw',
-        type: ChatType.ACTION,
-        url: `${config.baseUrl}/api/stable-diffusion/v1/text2img`,
-        // url: `${config.baseUrl}/api/stable-diffusion/v2/text2img`,
-        mapToRequestData: (messages: Message[]) => {
-            // get content of last message from user
-            return messages[messages.length - 1].content
-                .replace(/\/\w+/g, '')
-                .trim()
-        }
-    },
-    {
-        identifier: '/sum',
+        identifier: '/summarize',
         type: ChatType.CHAT,
         url: `${config.baseUrl}/api/youtext`,
         mapToRequestData: (messages: Message[]) => {
@@ -381,6 +395,16 @@ const Page = () => {
                             <Rain />
                         </div>
                     )}
+                    <div className="z-[1] pointer-events-none fixed inset-0 flex select-none items-center justify-center">
+                        <div className="relative w-[333px]">
+                            <img
+                                src="/imgs/kronos-logo.svg"
+                                className="w-full opacity-75 animate-pulse"
+                                alt="Background"
+                            />
+                            <div className="absolute inset-0 bg-black opacity-50"></div>
+                        </div>
+                    </div>
                     <div
                         // style={
                         //     sessionStarted
@@ -392,21 +416,9 @@ const Page = () => {
                         //           }
                         //         : {}
                         // }
-                        className={`chat-history align-items-center relative mx-auto inline-block h-[100vh] w-full overflow-y-scroll transition-all duration-500 `}
+                        className={`z-[2] chat-history align-items-center relative mx-auto inline-block h-[100vh] w-full overflow-y-scroll transition-all duration-500 `}
                         ref={chatResponseRef}
                     >
-                        {!sessionStarted && (
-                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-                                <div className="relative w-[333px]">
-                                    <img
-                                        src="/imgs/kronos-logo.svg"
-                                        className="w-full"
-                                        alt="Background"
-                                    />
-                                    <div className="absolute inset-0 bg-black opacity-50"></div>
-                                </div>
-                            </div>
-                        )}
                         {chatHistory?.length > 0 &&
                             chatHistory
                                 .filter((c: any) => c.role == 'assistant') // show assistant responses *only*
@@ -471,7 +483,7 @@ const Page = () => {
                                 placeholder="είσοδος = έξοδος"
                                 spellCheck={false}
                                 type="text"
-                                className="w-full h-full placeholder-gray-100 rounded-full text-[#EDEDED] input bg-gray-0 focus:border-transparent focus:shadow-transparent focus:outline-none font-mono"
+                                className="input h-full w-full rounded-full bg-base-200 font-mono text-[#EDEDED] placeholder-gray-100 focus:border-transparent focus:shadow-transparent focus:outline-none"
                                 value={chatInput}
                                 onChange={handleChatInputChange}
                                 onKeyDown={handleChatInputKeyDown}
@@ -488,7 +500,7 @@ const Page = () => {
                                     <img
                                         src="/imgs/kronos-logo.svg"
                                         className="w-full"
-                                        style={{ filter: 'brightness(350%)' }}
+                                        style={{ filter: 'brightness(133%)' }}
                                         alt="Background"
                                     />
                                 </div>
@@ -499,14 +511,15 @@ const Page = () => {
             </>
 
             {/* FOOTER DESKTOP */}
-            {/* <div className="absolute hidden bottom-3 left-3 md:flex">
-                <BtnOptions
+            <div className="text-muted absolute bottom-3 right-3 hidden text-[#676767] md:flex">
+                v.0.0.0 (alpha)
+                {/* <BtnOptions
                     exportChat={handleExportChat}
                     handleOpenImportModal={handleCloseImportModal}
                     setMute={setMute}
                     mute={mute}
-                />
-            </div> */}
+                /> */}
+            </div>
         </>
     )
 }
