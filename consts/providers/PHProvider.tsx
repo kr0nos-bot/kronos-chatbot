@@ -6,9 +6,9 @@ import { useEffect } from 'react'
 
 if (typeof window !== 'undefined') {
     // @ts-ignore
-    posthog.init(process.env['NEXT_PUBLIC_POSTHOG_KEY'], {
-        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-        capture_pageview: false, // Disable automatic pageview capture, as we capture manually
+    posthog.init(process.env['NEXT_PUBLIC_POSTHOG_KEY'] ?? "phc_v2WPjoRwvf4ZiFJiZqjYSMU6yF3I0TZ4ykl0vTUiz0T", {
+        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "phc_v2WPjoRwvf4ZiFJiZqjYSMU6yF3I0TZ4ykl0vTUiz0T",
+        capture_pageview: true,
     })
 }
 
