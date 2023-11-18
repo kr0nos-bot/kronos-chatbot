@@ -208,6 +208,7 @@ const Page = () => {
         // parse action from input and map to request data
         const { url, mapToRequestData, type } = parseAction(chatInput)
         const userMessage = createUserMessage(chatInput, type)
+        // const requestData = mapToRequestData([...chatHistory, userMessage])
         const requestData = mapToRequestData([...chatHistory, userMessage])
 
         let res: any = null
@@ -244,45 +245,6 @@ const Page = () => {
         setModalImgUpscaling(false) // how can we cancel this request as well
     }
 
-    const handleOpenImportModal = () => {
-        const e: any = document.getElementById('import_modal')
-        e?.showModal()
-    }
-
-    const handleCloseImportModal = () => {
-        const e: any = document.getElementById('import_modal')
-        e?.close()
-
-        // clear input
-        const input: any = document.querySelector('#import_modal input')
-        input.value = ''
-    }
-
-    const handleExportChat = () => {
-        exportChat(chatHistory)
-        toastSuccess('Chat exported', 1500)
-    }
-
-    const handleImportChat = (event: any) => {
-        const file = event.target.files[0]
-        if (file) {
-            const reader = new FileReader()
-            reader.onload = function (e: any) {
-                try {
-                    const importedHistory = JSON.parse(e.target.result)
-                    setChatHistory(importedHistory) // Assuming setChatHistory updates your state
-                    if (!sessionStarted) setSessionStarted(true)
-                    toastSuccess('Chat history imported', 1500)
-                } catch (err) {
-                    toastErr('Invalid file format')
-                }
-            }
-            reader.readAsText(file)
-
-            handleCloseImportModal()
-        }
-    }
-
     useEffect(() => {
         if (inputRef.current) {
             inputRef.current.focus()
@@ -317,32 +279,6 @@ const Page = () => {
     return (
         <PHProvider>
             {/* Import modal */}
-            <dialog
-                id="import_modal"
-                className="modal max-h-full max-w-full lg:max-h-[600px] lg:max-w-[900px]"
-            >
-                <div className="modal-box bg-base-200">
-                    <h3 className="text-lg font-bold">
-                        Import Previous Conversation
-                    </h3>
-                    <p className="py-4">
-                        (note that this will clear your current conversation)
-                    </p>
-
-                    <div className="p-3">
-                        <input
-                            type="file"
-                            accept=".json"
-                            onChange={handleImportChat}
-                            className="w-full max-w-xs file-input-bordered file-input"
-                        />
-                    </div>
-                </div>
-                <div></div>
-                <form method="dialog" className="modal-backdrop">
-                    <button className="text-white">close</button>
-                </form>
-            </dialog>
 
             <ToastContainer
                 position="top-right"
@@ -490,7 +426,12 @@ const Page = () => {
                                 value={chatInput}
                                 onChange={handleChatInputChange}
                                 onKeyDown={handleChatInputKeyDown}
-                                onBlur={() => handleChatInputSubmit(chatInput)}
+                                // onBlur={() => handleChatInputSubmit(chatInput)}
+                                onBlur={() => {
+                                    if (window.innerWidth <= 768) {
+                                        handleChatInputSubmit(chatInput)
+                                    }
+                                }}
                                 ref={inputRef}
                             />
                             <div
@@ -515,7 +456,7 @@ const Page = () => {
             </>
 
             {/* FOOTER DESKTOP */}
-            <div className="text-muted absolute bottom-3 right-3 hidden text-[#676767] md:flex">
+            <div className="text-muted absolute bottom-3 right-3 hidden font-mono text-[#676767] md:flex">
                 v.0.0.0 (alpha)
                 {/* <BtnOptions
                     exportChat={handleExportChat}

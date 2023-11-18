@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: 'lufga';
-  src: url('/fonts/lufga.otf') format('opentype'); /* URL relative to your CSS file */
+  src: url('/fonts/lufga.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -29,17 +29,32 @@
 
 @font-face {
   font-family: 'geek';
-  src: url('/fonts/geek.ttf') format('truetype'); /* URL relative to your CSS file */
+  src: url('/fonts/geek.ttf') format('truetype'); 
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'mara2v2';
+  src: url('/fonts/mara2v2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'oserif';
+  src: url('/fonts/oserif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 html,
 * {
     background: 'black';
-    font-family: 'geek';
+    font-family: 'oserif';
 }
 
 button:hover, .btn:hover {
