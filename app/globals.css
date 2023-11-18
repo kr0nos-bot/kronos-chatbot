@@ -1,0 +1,426 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'runescape_uf';
+    src: url('/fonts/runescape_uf.ttf') format('truetype'); /* URL relative to your CSS file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'kode';
+  src: url('/fonts/kode.ttf') format('truetype'); /* URL relative to your CSS file */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'lufga';
+  src: url('/fonts/lufga.otf') format('opentype'); /* URL relative to your CSS file */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'geek';
+  src: url('/fonts/geek.ttf') format('truetype'); /* URL relative to your CSS file */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+html,
+* {
+    background: 'black';
+    font-family: 'geek';
+}
+
+button:hover, .btn:hover {
+    /* Resetting properties that may be affected on hover */
+    background-color: inherit !important;
+    color: inherit;
+    border-color: inherit !important;
+    transform: none !important;
+    box-shadow: none !important;
+    /* ... any other properties you might want to reset ... */
+  }
+
+  /* Fixes https://github.com/saadeghi/daisyui/issues/894 */
+.input-group :first-child {
+    @apply !rounded-tl-full !rounded-bl-full;
+  }
+  
+  .input-group :last-child {
+    @apply !rounded-tr-full !rounded-br-full;
+  }
+
+  .green-cursor {
+    /* Set the cursor color to green */
+    caret-color: green;
+
+    /* Set the cursor width and height to create a green block */
+    caret-width: 12px;
+    caret-height: 24px; /* Adjust the height as needed */
+    caret-shape: block;
+}
+
+/* styles.css or equivalent */
+.transition-move {
+  transition: transform 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* h1 {
+  overflow: hidden;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: white;
+}
+
+span {
+  display: inline-block;
+  animation: reveal 0.1s cubic-bezier(0.77, 0, 0.175, 1) 0.01s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes reveal {
+  0% {
+    transform: translate(0, 100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+ */
+
+
+ .fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* custom scrollbars */
+
+::-webkit-scrollbar {
+  width: 0px; /* for vertical scrollbars */
+  height: 0px; /* for horizontal scrollbars */
+  background: transparent; /* make scrollbar background transparent */
+  display: none; /* hide scrollbar */
+}
+
+scrollbar-width: none; /* Firefox */
+
+-ms-overflow-style: none; /* IE and Edge */
+
+.chat-history::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+.chat-history {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
+/* wave loading animation */
+
+.wave {
+  width: 5px;
+  height: 50px;
+  background: linear-gradient(45deg, white, white);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+.wave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.wave:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.wave:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.wave:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.wave:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.wave:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+} 
+
+/* matrix */
+
+
+.vidContain {
+  width:300px; height:200px;
+  position:relative;
+  display:inline-block;
+  margin:10px;
+}
+.vid {
+  position: absolute; 
+  top: 0; left:0;
+  width: 100%; height: 100%; 
+  z-index: -1;
+}    
+.content {
+  position:absolute;
+  top:0; left:0;
+  background: black;
+  color:white;
+}
+
+/* placeholder color */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #3A3A3C;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #3A3A3C;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #3A3A3C;
+}
+
+/* custom theming (TODO: should probably be moved elsewhere) */
+/* h1 {
+  font-size: large;
+  margin-bottom: 1em;
+} */
+
+h1, p, pre {
+  margin-bottom: 1em;
+}
+
+.blur {
+  filter: blur(10px);
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;  /* or other appropriate value */
+}
+
+.hover-trigger:hover .tooltip {
+  display: block;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  border: 1px solid #ccc;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+
+/* animate text */
+$speed: 10;
+
+.animated-title { 
+  color: white;
+  font-size: 48px;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+  animation: textGlitch 3s ease-in-out infinite alternate;
+}
+
+.animated-title {
+  span {
+    display: inline-block;
+    min-width: 1rem;
+  }
+  
+  .animate {
+    @for $i from 1 through 100 {
+      &:nth-child(3n+#{$i}){
+        span {
+          opacity: 0;
+          transform: translateY(2px);
+          animation: displayLetter .5s ease-in-out .5s forwards alternate;
+          letter-spacing: 1px;
+
+          @for $i from 1 through 100 {
+            &:nth-child(3n+#{$i}){
+              animation-delay: (random($speed) / 10) * 1s
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.animated-word {
+  opacity: 0;
+}
+
+@keyframes displayLetter {
+	0% {
+    transform: translateY(2px);
+    color: white;
+    opacity: 0;
+	}
+  10% {
+    opacity: 1;
+    color: limegreen;
+  }
+  20% {
+    opacity: 0;
+    color: white;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    color: darkgreen;
+    transform: translateY(1px);
+  }
+  60% {
+    opacity: 1;
+    color: white;
+    transform: translateY(1px);
+  }
+	100% {
+    transform: translateY(0);
+    color: white;
+    opacity: 1;
+	}
+}
+
+@keyframes textGlitch {
+  0% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+	95% {
+    opacity: 0.1;
+  }
+  96% {
+    opacity: 1;
+    transform: translateX(1px);
+  }
+  97% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.word {
+  bottom: 0;
+  color: #fff;
+  font-size: 2.5em;
+  height: 2.5em;
+  left: 0;
+  line-height: 2.5em;
+  margin: auto;
+  right: 0;
+  position: absolute;
+  text-shadow: 0 0 10px rgba(50, 255, 50, 0.5), 0 0 5px rgba(100, 255, 100, 0.5);
+  top: 0
+}
+
+.word span {
+  display: inline-block;
+  transform: translateX(100%) scale(0.9);
+  transition: transform 500ms;
+}
+
+.word .done {
+  color: #6f6;
+  transform: translateX(0) scale(1);
+}
+
+/*  */
+.faded {
+  position: relative;
+}
+
+.faded::before,
+.faded::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 33px;  /* Adjust the width to your preference */
+  pointer-events: none;
+  z-index: 2;
+}
+
+.faded::before {
+  left: 0;
+  background: linear-gradient(to right, black, transparent);
+}
+
+.faded::after {
+  right: 0;
+  background: linear-gradient(to left, black, transparent);
+}
+
+*:hover {
+  border: 0px transparent;
+}
+
+*:focus {
+  border: 0px transparent;
+}
