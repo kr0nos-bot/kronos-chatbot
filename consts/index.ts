@@ -11,6 +11,23 @@ The seed sale will be hosted in rounds, with wallets being whitelisted in batche
 - The team is completely committed to the success of Kronos Bot! The team will not be dumping tokens on investors like other projects (at least not for another 23+ years!).
 - Liquidity is locked for 20 years to provide long long lasting liquidity that cannot be pulled for decades. The liquidity lock transaction is XXX.
 - Rumor has it that the early Kronos Bot users might earn an airdrop.
+- Whitelist required
+- Start of sale: 2023-11-17
+- End of sale: 2023-11-27
+- Duration: 10 days
+- Raise Cap: $250,000 USDC/USDT
+- Tokens for sale: 1,200,000
+- Price/token: $0.2083
+- Seed Sale NFTs: Supply capped to the number of wallets purchasing $KRON.
+- Seed sale FDV: $1,666,667
+- esting: 25% unlocked at LGE, with 75% linearly vesting over 3 months starting 5 days after LGE
+- Launch price (Soft cap): $0.3333
+- Discount to launch: 37.5%
+- Wallet seed sale cap: $5,000 USDC/USDT
+- Wallet seed sale minimum: $500 USDC/USDT
+- Through proactive security measures, user-centered response strategies, and an unwavering commitment to improvement, Kronos Bot strives to set new standards for transaction security. Drawing inspiration from Maestro's rapid response, we aim to build and maintain user confidence by providing a secure and reliable platform.
+- In our mission to reach a global audience of 2.7 billion, Kronos Bot will unveil its advanced multilingual UI/UX, available across all our products. We offer extensive language support and an experience tailored to cultural nuances, from auto-detection of device language to real-time trade translations. No matter where you're from, Kronos Bot ensures a user-centric and universally accessible digital trading experience.
+- Our non-custodial feature will launch on Telegram first and later be implemented into our WhatsApp version and is designed with both Telegram and the colossal user base of WhatsApp in mind.
 `
 
 const COMMANDS = `
