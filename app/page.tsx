@@ -199,6 +199,8 @@ const Page = () => {
     }
 
     const handleChatInputSubmit = async (chatInput: string) => {
+        if (chatInput.trim() === '') return
+
         setSessionStarted(true)
         setResponsePending(true)
 
