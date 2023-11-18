@@ -5,12 +5,12 @@ const ResponseContainerChat = ({ content = '' }: { content: string }) => {
     const isMultiLine = content?.split('\n').length > 2
 
     return (
-        <div className="flex w-full min-h-fit h-full px-[33px] md:px-[133px]">
+        <div className="flex h-full min-h-fit w-full px-[33px] md:px-[133px]">
             <div
-                className={`w-full m-auto text-white break-words ${
+                className={`text-[#FAF9F6] m-auto w-full break-words ${
                     isMultiLine
-                        ? 'text-left flex-col'
-                        : 'text-center justify-center flex flex-row flex-wrap'
+                        ? 'flex-col text-left'
+                        : 'flex flex-row flex-wrap justify-center text-center'
                 }`}
             >
                 <span className="items-center ">
