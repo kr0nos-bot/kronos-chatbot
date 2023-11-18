@@ -334,6 +334,7 @@ const Page = () => {
                     <div className="pointer-events-none fixed inset-0 z-[1] flex select-none items-center justify-center">
                         <div className="relative w-[333px]">
                             <img
+                                // TODO: onclick, animate pulse a single time
                                 src="/imgs/kronos-logo.svg"
                                 className={`w-full opacity-30 ${
                                     sessionStarted && 'opacity-70 animate-pulse'
