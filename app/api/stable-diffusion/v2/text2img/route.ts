@@ -23,6 +23,8 @@ async function fetchCompletedImage(id: string): Promise<any> {
 }
 
 async function requestImage(input: string): Promise<any> {
+    return NextResponse.json({})
+
     const res = await axios.post(
         'https://stablediffusionapi.com/api/v3/text2img',
         {

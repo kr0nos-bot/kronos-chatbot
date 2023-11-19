@@ -24,6 +24,7 @@ async function fetchCompletedImage(id: string): Promise<any> {
 }
 
 export async function POST(request: Request) {
+    return NextResponse.json({})
     try {
         const { input } = await request.json()
         const res = await axios.post(

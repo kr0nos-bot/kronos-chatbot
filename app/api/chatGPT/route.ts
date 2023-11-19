@@ -6,8 +6,6 @@ export const dynamic = 'force-dynamic'
 export async function POST(request: Request) {
     const { input } = await request.json()
 
-    console.log(input)
-
     const res = await OpenAIClient.createChatCompletion(input)
 
     // const r = res.data.choices[0].message.content

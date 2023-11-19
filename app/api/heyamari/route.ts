@@ -6,6 +6,8 @@ export const maxDuration = 60 // This function can run for a maximum of 5 second
 export const dynamic = 'force-dynamic'
 
 export async function POST(request: Request) {
+    return NextResponse.json({})
+
     const { input: messages } = await request.json()
 
     const res = await axios.post(

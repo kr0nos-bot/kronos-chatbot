@@ -5,6 +5,8 @@ export const maxDuration = 60 // This function can run for a maximum of 5 second
 export const dynamic = 'force-dynamic'
 
 export async function POST(request: Request) {
+    return NextResponse.json({})
+
     const { input: query } = await request.json()
 
     try {
