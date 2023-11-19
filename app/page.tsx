@@ -427,11 +427,11 @@ const Page = () => {
                                 onChange={handleChatInputChange}
                                 onKeyDown={handleChatInputKeyDown}
                                 // onBlur={() => handleChatInputSubmit(chatInput)}
-                                onBlur={() => {
-                                    if (window.innerWidth <= 768) {
-                                        handleChatInputSubmit(chatInput)
-                                    }
-                                }}
+                                // onBlur={() => {
+                                //     if (window.innerWidth <= 768) {
+                                //         handleChatInputSubmit(chatInput)
+                                //     }
+                                // }}
                                 ref={inputRef}
                             />
                             <div
