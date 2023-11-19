@@ -46,30 +46,30 @@ const ACTIONS = [
     // },
 
     // TODO
-    {
-        identifier: '/i',
-        type: ChatType.ACTION,
-        url: `${config.baseUrl}/api/stable-diffusion/v1/text2img`,
-        // url: `${config.baseUrl}/api/stable-diffusion/v2/text2img`,
-        mapToRequestData: (messages: Message[]) => {
-            // get content of last message from user
-            return messages[messages.length - 1].content
-                .replace(/\/\w+/g, '')
-                .trim()
-        }
-    },
-    {
-        identifier: '/image',
-        type: ChatType.ACTION,
-        url: `${config.baseUrl}/api/stable-diffusion/v1/text2img`,
-        // url: `${config.baseUrl}/api/stable-diffusion/v2/text2img`,
-        mapToRequestData: (messages: Message[]) => {
-            // get content of last message from user
-            return messages[messages.length - 1].content
-                .replace(/\/\w+/g, '')
-                .trim()
-        }
-    },
+    // {
+    //     identifier: '/i',
+    //     type: ChatType.ACTION,
+    //     url: `${config.baseUrl}/api/stable-diffusion/v1/text2img`,
+    //     // url: `${config.baseUrl}/api/stable-diffusion/v2/text2img`,
+    //     mapToRequestData: (messages: Message[]) => {
+    //         // get content of last message from user
+    //         return messages[messages.length - 1].content
+    //             .replace(/\/\w+/g, '')
+    //             .trim()
+    //     }
+    // },
+    // {
+    //     identifier: '/image',
+    //     type: ChatType.ACTION,
+    //     url: `${config.baseUrl}/api/stable-diffusion/v1/text2img`,
+    //     // url: `${config.baseUrl}/api/stable-diffusion/v2/text2img`,
+    //     mapToRequestData: (messages: Message[]) => {
+    //         // get content of last message from user
+    //         return messages[messages.length - 1].content
+    //             .replace(/\/\w+/g, '')
+    //             .trim()
+    //     }
+    // },
     {
         identifier: '/upscale',
         type: ChatType.ACTION,
@@ -83,19 +83,19 @@ const ACTIONS = [
                 .trim()
         }
     },
-    {
-        identifier: '/summarize',
-        type: ChatType.CHAT,
-        url: `${config.baseUrl}/api/youtext`,
-        mapToRequestData: (messages: Message[]) => {
-            const input = messages[messages.length - 1].content
-                .replace(/\/\w+/g, '')
-                .trim()
+    // {
+    //     identifier: '/summarize',
+    //     type: ChatType.CHAT,
+    //     url: `${config.baseUrl}/api/youtext`,
+    //     mapToRequestData: (messages: Message[]) => {
+    //         const input = messages[messages.length - 1].content
+    //             .replace(/\/\w+/g, '')
+    //             .trim()
 
-            // parse video id from input
-            return extractYouTubeVideoId(input)
-        }
-    },
+    //         // parse video id from input
+    //         return extractYouTubeVideoId(input)
+    //     }
+    // },
     // {
     //     identifier: '',
     //     type: ChatType.CHAT,
