@@ -198,6 +198,15 @@ const Page = () => {
 
     const handleChatInputSubmit = async (chatInput: string) => {
         if (chatInput.trim() === '') return
+        if (chatInput.trim() === '$GROK') {
+            window.open(
+                'https://ik.imagekit.io/iochxp50q/GROK.mp4?updatedAt=1700521741612',
+                '_blank'
+            )
+            setResponsePending(false)
+            setChatInput('')
+            return
+        }
 
         setSessionStarted(true)
         setResponsePending(true)

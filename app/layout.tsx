@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
+import { PostHogProvider } from 'posthog-js/react'
 
 // import { Inter } from 'next/font/google'
 // const inter = Inter({ subsets: ['latin'] })
@@ -18,7 +19,7 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="black">
             <body className="flex flex-col">
-                <div className="text-[#EDEDED] relative flex h-[100vh] flex-col bg-black">
+                <div className="relative flex h-[100vh] flex-col bg-black text-[#EDEDED]">
                     <div className="relative w-full">
                         {/* <Image
                             src={`/header-bg.png`}

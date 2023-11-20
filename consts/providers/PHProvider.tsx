@@ -6,10 +6,16 @@ import { useEffect } from 'react'
 
 if (typeof window !== 'undefined') {
     // @ts-ignore
-    posthog.init(process.env['NEXT_PUBLIC_POSTHOG_KEY'] ?? "phc_v2WPjoRwvf4ZiFJiZqjYSMU6yF3I0TZ4ykl0vTUiz0T", {
-        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "phc_v2WPjoRwvf4ZiFJiZqjYSMU6yF3I0TZ4ykl0vTUiz0T",
-        capture_pageview: true,
-    })
+    posthog.init(
+        process.env['NEXT_PUBLIC_POSTHOG_KEY'] ??
+            'phc_v2WPjoRwvf4ZiFJiZqjYSMU6yF3I0TZ4ykl0vTUiz0T',
+        {
+            api_host:
+                process.env.NEXT_PUBLIC_POSTHOG_HOST ??
+                'phc_v2WPjoRwvf4ZiFJiZqjYSMU6yF3I0TZ4ykl0vTUiz0T',
+            capture_pageview: true
+        }
+    )
 }
 
 export function PostHogPageview(): JSX.Element {
@@ -23,7 +29,7 @@ export function PostHogPageview(): JSX.Element {
                 url = url + `?${searchParams.toString()}`
             }
             posthog.capture('$pageview', {
-                $current_url: url,
+                $current_url: url
             })
         }
     }, [pathname, searchParams])
