@@ -428,7 +428,7 @@ const Page = () => {
                         <div className="relative h-[40px] w-full opacity-[.8]">
                             <input
                                 autoFocus
-                                placeholder="είσοδος"
+                                placeholder="chat with Kronos"
                                 spellCheck={false}
                                 type="text"
                                 className="input h-full w-full rounded-none bg-base-200 font-mono text-[#EDEDED] placeholder-gray-100 focus:border-transparent focus:shadow-transparent focus:outline-none"
