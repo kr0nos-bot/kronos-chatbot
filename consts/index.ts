@@ -35,6 +35,8 @@ KNOWLEDGE BASE:
 - **Real-Time Editing**: Allows dynamic adjustment of leveraged trades as market conditions change, offering unprecedented control and flexibility.
 - **Mirror Empori**: Syncs trades in real-time, leveraging strategies from top DEX & CEX traders, eliminating the need for constant market vigilance. Designed to ensure a seamless trading experience by automating strategy adoption from successful traders.
 - **Trending Mirrors**: Simplifies finding ideal traders for mirror trading with a "Trending Mirrors" list in the Mirror Sniper, showcasing the most profitable traders in real-time. Ranks wallet addresses based on the engagement of Kronos Bot users for Mirror Snipes, offering insights into weekly performance and distinguishing top on-chain traders. Features an incentive for traders on the Trending Mirrors list, granting them 25% of the revenue generated through their contributions to Kronos Bot.
+- **Multi-Platform AI Assistant**: **WhatsApp**: Acts as an onboarding guide, offering real-time clarification on trading concepts and platform use, enhancing confidence for beginners. **Telegram**: Provides interactive, personalized guidance via a swipe-up dashboard, serving as a personal tutor for in-depth assistance and streamlined learning. 
+
 
 ## KRON Seed Sale:
 - **Whitelist Requirement**: Mandatory for participation.
