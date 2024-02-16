@@ -7,7 +7,7 @@ import { PostHogProvider } from 'posthog-js/react'
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-    title: 'Κρόνος',
+    title: 'Kronos AI',
     description: ''
 }
 
